@@ -1,0 +1,57 @@
+<html>
+<head>
+	<title>Video</title>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+	<script type='text/javascript' src='https://cdn.firebase.com/js/client/1.0.11/firebase.js'></script>	
+
+	<!-- Bootstrap -->
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+	<!-- End Bootstrap -->
+
+	<script src="http://s3-eu-west-1.amazonaws.com/hackathonccma/lib/handlebars.js"></script>
+	<link rel="stylesheet" href="style/app.css">
+	<script src="app.js"></script>
+</head>
+<body>
+
+<script id="video-template" type="text/x-handlebars-template">
+{{#if video}}
+<form class="form-inline" role="form">
+  <div class="form-group">
+    <label class="sr-only">Id de la TV</label>
+    <input class="form-control tvid" type="text" placeholder="Id de la TV">
+  </div>
+  <button  type="button" class="sendButton btn btn-default">Enviar a la TV</button>
+</form>
+	
+<div class="col-xs-12">
+	<div class="media">
+		<div class="pull-left" href="#">
+		  <img class="media-object" src="{{video.image.url}}"/>
+		</div>
+		<div class="media-body">
+		  <h4 class="media-heading">{{video.title}}</h4>
+		  <p>{{video.program}}</p>
+		  <p>{{video.desc}}</p>
+		</div>
+	</div>
+</div>
+{{else}}
+<div class="alert alert-danger">Error carregant el video</div>
+{{/if}}
+</script>
+
+<div class="container-fluid">
+	<div class="video row">
+		<div class="alert alert-warning">Carregant</div>    
+	</div>
+</div>
+
+</body>
+</html>

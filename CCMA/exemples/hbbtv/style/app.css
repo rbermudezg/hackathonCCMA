@@ -1,0 +1,37 @@
+img.media-object {
+	height:64px;
+}
+
+img{
+	width: 100%;
+}
+
+#video{
+	position: absolute;
+	width: 50%;
+	height: 50%;
+	top: 50%;
+	left: 0px;
+}
+
+#videoBroadcast{
+	position: absolute;
+	width: 50%;
+	height: 50%;
+	top: 0px;
+	left: 50%;	
+}
+
+.serverdata{
+	position: absolute;
+	width: 50%;
+	height: 50%;
+	top: 50%;
+	left: 50%;	
+}
+
+#idTV{
+	position: absolute;
+	left: 5%;
+	top: 5%;
+}

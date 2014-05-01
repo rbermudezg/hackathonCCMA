@@ -1,0 +1,81 @@
+<html>
+<head>
+	<title>Llistat programes</title>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+	<!-- Bootstrap -->
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+	<!-- End Bootstrap -->
+
+	<script src="http://s3-eu-west-1.amazonaws.com/hackathonccma/lib/handlebars.js"></script>
+	<link rel="stylesheet" href="style/app.css">
+
+	<script src="scripts/video.js"></script>
+	<script src="app.js"></script>
+</head>
+<body>
+
+<script id="programes-template" type="text/x-handlebars-template">
+<div class="panel-group" id="accordion">
+  {{#each programes}}
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#{{id}}">
+          {{hora}} {{title}}
+        </a>
+      </h4>
+    </div>
+    <div id="{{id}}" class="panel-collapse collapse">
+      <div class="panel-body">
+      	<p>{{desc}}</p>
+      	{{#if media}}
+      		<div class="media block">
+      			<a class="pull-right" href="#{{media}}">
+			      <img class="media-object" src="{{image}}"/>
+			    </a>
+			    <div class="media-body">
+			      <h4 class="media-heading">Programa sencer</h4>
+			    </div>
+      		</div>
+      	{{else}}
+      		<div class="alert alert-danger">
+		  		No hi programa sencer.
+		  	</div>
+		{{/if}}
+        <ul class="list-unstyled media-list">
+	  	{{#each clips}}
+	  		<li class="media">
+		  		<a class="pull-left" href="#{{id}}">
+			      <img class="media-object" src="{{image}}"/>
+			    </a>
+			    <div class="media-body">
+			      <h4 class="media-heading">{{title}}</h4>
+			    </div>
+	  		</li>
+	  	{{else}}
+		  	<li class="alert alert-danger">
+		  		No hi ha clips.
+		  	</li>
+	  	{{/each}}	
+	  	</ul>
+      </div>
+    </div>
+  </div>
+  {{/each}}
+</div>
+</script>
+
+<div class="container-fluid">
+	<div class="programes row">
+		<div class="alert alert-warning">Carregant</div>
+	</div>
+</div>
+
+</body>
+</html>
