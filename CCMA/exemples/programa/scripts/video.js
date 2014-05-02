@@ -24,6 +24,6 @@ $(document).delegate('.media a', 'click', function(ev) {
     $(document.body).append($(modal));
     modalBody = $('.modal .modal-body');
   }
-  modalBody.html('<iframe src="../video/' + href + '"></iframe>');
+  modalBody.html('<iframe src="../video/index.html' + href + '"></iframe>');
   $('.modal').modal()
 });
